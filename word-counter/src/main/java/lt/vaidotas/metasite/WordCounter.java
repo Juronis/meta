@@ -18,6 +18,8 @@ import com.google.common.collect.Multiset;
  * Main class for word counter app
  */
 public class WordCounter {
+
+    private static final String CHARSET_NAME = "UTF-8";
     
     /**
      * 
@@ -53,7 +55,7 @@ public class WordCounter {
     public static  List<Callable<Multiset<String>>> constructTasks(String[] filePaths){
         List<Callable<Multiset<String>>> tasks = new ArrayList<Callable<Multiset<String>>>();
         for(String filePath : filePaths){
-            tasks.add(new CountTask(filePath, Charset.forName("UTF-8")));
+            tasks.add(new CountTask(filePath, Charset.forName(CHARSET_NAME)));
         }
         return tasks;
     }

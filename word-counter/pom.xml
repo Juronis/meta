@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>lt.vaidotas.metasite</groupId>
   <artifactId>word-counter</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   
   <name>word-counter</name>
@@ -27,6 +27,58 @@
         <version>4.12</version>
         <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>28.1-jre</version>
+    </dependency>
+    <dependency>
+        <groupId>org.primefaces</groupId>
+        <artifactId>primefaces</artifactId>
+        <version>7.0</version>
+    </dependency>
+     <dependency>
+        <groupId>javax.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>2.1</version>
+        <scope>provided</scope>
+    </dependency>
+    <!--<dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-impl</artifactId>
+        <version>2.2.20</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+    </dependency>-->
+    <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>el-impl</artifactId>
+        <version>2.2</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>javax.faces</artifactId>
+        <version>2.4.0</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.enterprise</groupId>
+        <artifactId>cdi-api</artifactId>
+        <version>2.0</version>
+    </dependency>
+    <!-- <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.1</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>-->
   </dependencies>
   
   <build>
@@ -35,8 +87,8 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
-                <source>${project.java.version}</source>
-                <target>${project.java.version}</target>
+                <source>${project.build.sourceVersion}</source>
+                <target>${project.build.targetVersion}</target>
                 <encoding>${project.build.sourceEncoding}</encoding>
             </configuration>
         </plugin>
@@ -47,6 +99,23 @@
                 <encoding>${project.build.sourceEncoding}</encoding>
             </configuration>
         </plugin>
+        <!-- Apache Tomcat7 maven plugin -->
+            <!-- <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.12.RC2</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webAppConfig>
+                        <contextPath>/word-counter</contextPath>
+                    </webAppConfig>
+                </configuration>
+            </plugin>-->
      </plugins>
   </build>
 </project>
